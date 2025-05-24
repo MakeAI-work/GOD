@@ -1,14 +1,14 @@
-# G.O.D (Guide of Dharma)
+# G.O.D (Guide of Dharma) - Backend API
 
-A conversational Indian astrology platform powered by AI, providing users with personalized Vedic astrology consultations. This application features Pandit Saarthi, a virtual Jyotish (Vedic astrologer) who guides users through a natural conversation, asking questions one by one to provide cosmic insights and astrological guidance.
+A backend API for a spiritual wellness platform powered by AI, providing users with personalized guidance inspired by Lord Krishna and Vedic astrology. This application features Saarthi, an AI guide who engages users in conversation to offer spiritual wisdom, inner peace, and clarity.
 
 ## Features
 
-- **Conversational AI Astrologer**: Engage with Pandit Saarthi, a virtual Vedic astrologer who asks questions sequentially, creating a natural consultation experience
-- **Personalized Astrological Guidance**: Receive insights on life path, relationships, career, and health based on Vedic astrology principles
-- **Sequential Conversation Flow**: Experience a genuine dialogue where the astrologer responds to your answers before asking the next question
-- **Astrological Symbols**: Automatically enhances responses with appropriate planetary and zodiac symbols
-- **Dynamic Typing Effect**: Watch as the astrologer's responses appear character by character, simulating a real-time conversation
+- **Conversational AI Guide**: Backend API for Saarthi, a virtual spiritual guide inspired by Lord Krishna and Vedic astrology
+- **Personalized Spiritual Guidance**: API provides insights on inner peace, clarity, personal growth, and spiritual matters
+- **Sequential Conversation Management**: Maintains conversation state to deliver a coherent, natural dialogue experience
+- **Context Preservation**: Tracks conversation history to provide increasingly personalized insights
+- **Information Extraction**: Identifies key details from user responses to inform spiritual guidance
 
 ## Setup Instructions
 
@@ -27,50 +27,44 @@ A conversational Indian astrology platform powered by AI, providing users with p
    ```
    The application will be available at `http://localhost:8000`
 
-## Usage
+## API Usage
 
-1. Select what you're seeking: Inner Peace, Clarity, To Be Heard, or Personal Growth
-2. Enter your question or concern in the text area
-3. Receive guidance from Saarthi, inspired by the wisdom of Lord Krishna
+1. Start a conversation with a POST request to `/chat` endpoint
+2. Include your message and what you're seeking (default: "Inner Peace") in the request body
+3. Receive JSON responses with guidance from Saarthi, inspired by the wisdom of Lord Krishna
+4. The API maintains conversation state between requests for a coherent dialogue
 
 ## Technical Details
 
 - **Backend**: Built with FastAPI for efficient API handling and conversation state management
-- **Frontend**: Implemented with HTML, CSS, and JavaScript for a responsive, interactive UI
-- **AI Integration**: Powered by OpenAI's GPT-4o API with custom system prompts for authentic Vedic astrology guidance
-- **Conversation Management**: Maintains conversation state to deliver a coherent, sequential dialogue
-- **Dynamic Content**: Real-time response enhancement with astrological symbols and typing effects
-- **Responsive Design**: Optimized for both desktop and mobile devices
+- **AI Integration**: Powered by OpenAI's GPT-4o API with custom system prompts for authentic spiritual guidance
+- **Conversation Management**: Maintains conversation history and state to deliver a coherent, sequential dialogue
+- **CORS Support**: Configured for cross-origin requests, allowing integration with any frontend
+- **Session Handling**: Basic session management for maintaining separate conversations
 
 ## Project Structure
 
 ```
 /
-├── app.py              - Main FastAPI application with conversation logic
+├── app.py              - Main FastAPI application with conversation logic and API endpoints
 ├── requirements.txt    - Python dependencies
 ├── .env                - Environment variables (create from .env.example)
-├── .env.example        - Template for environment variables
-├── static/             - Static assets
-│   ├── css/            - CSS stylesheets for astrology-themed styling
-│   ├── js/             - JavaScript for dynamic conversation interactions
-│   └── images/         - Astrological imagery (via external links)
-└── templates/          - HTML templates
-    └── index.html      - Main consultation interface
+└── .env.example        - Template for environment variables
 ```
 
 ## How It Works
 
-1. **Conversational Flow**: The astrologer asks questions one at a time, listening to your responses before proceeding
-2. **State Management**: Tracks conversation progress to provide increasingly personalized insights
-3. **Information Extraction**: Identifies key details from user responses to inform astrological readings
-4. **Response Enhancement**: Automatically adds appropriate astrological symbols to planetary and zodiac references
-5. **Dynamic Typing**: Simulates the astrologer typing responses in real-time for a more authentic experience
+1. **API Endpoints**: Provides `/chat` endpoint for conversation interaction
+2. **Conversational Flow**: The guide asks questions one at a time, listening to your responses before proceeding
+3. **State Management**: Tracks conversation progress to provide increasingly personalized insights
+4. **Information Extraction**: Identifies key details from user responses to inform spiritual guidance
+5. **Session Management**: Uses simple session identifiers to maintain separate conversations
 
 ## Future Enhancements
 
-- **Birth Chart Generation**: Create visual birth charts based on user's birth details
-- **Planetary Transit Alerts**: Notify users about significant astrological events
-- **Multiple Astrologer Personas**: Add specialists in different astrological traditions
-- **Voice Interaction**: Enable spoken consultations for a hands-free experience
-- **Session Recording**: Save consultation transcripts for future reference
-- **Daily/Weekly Forecasts**: Provide regular astrological updates based on user's profile
+- **Authentication**: Add user authentication for personalized experiences
+- **Database Integration**: Store conversations and user profiles in a database
+- **Multiple Guide Personas**: Add specialists in different spiritual traditions
+- **Advanced NLP**: Enhance information extraction from user messages
+- **Analytics**: Track conversation metrics and user engagement
+- **Session Management**: Implement more robust session handling
